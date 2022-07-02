@@ -10,7 +10,6 @@
 \usepackage[ngerman]{babel}
 
 
-
 % TUC-Templates laden.
 \usetheme{tuc2019}
 \mode<article>{\usepackage{beamerarticletuc2019}}
@@ -30,48 +29,50 @@
 %\setbeamercolor{frametitle}{parent=normal text}
 %\setbeamerfont{frametitle}{series=\bfseries}
 
-
-
 % Metadaten
-\title[Kurztitel]{Titel}
-\subtitle{Lehrveranstaltung bzw. Untertitel}
-\author{Autor}
-\date{Datum bzw. Semester}
+\newcommand{\Title}{Benutzerfreundlichkeit fünf verschiedener Zwei-Faktor-Authentifizierungsmethoden}
+\newcommand{\ShortTitle}{Zwei-Faktor-Authentifizierungsmethoden}
+\title[\ShortTitle]{\Title}
+\subtitle{Hauptseminar Medieninformatik}
+\author{Joshua Jeschek}
+\date{11.06.2022}
 \institute[TUC]{TU Chemnitz}
-\titlegraphic{\includegraphics[height=0.2\textheight]{tuc2019/logo/tuc_green}}
-\tucurl{http://www.tu-chemnitz.de/urz/}
-
+\titlegraphic{\includegraphics[height=0.19\textheight]{tuc2019/logo/tuc_green}}
+\tucurl{https://hauptseminar.jeschek.eu}
 
 
 \begin{document}
-\tucthreeheadlines
+\tucthreeheadlines{}
 \frame{\titlepage}
-\note{Anmerkungen}
 
-\tuctwoheadlines
-\frame{\frametitle{Gliederung}\tableofcontents}
-\note{\begin{itemize}
-\item Weitere Anmerkungen \dots
-\item \dots\ in Stichpunkten \dots
-\item \dots\ formuliert.
-\end{itemize}}
+\tuctwoheadlines{}
+\section*{\ShortTitle}
+\subsection{Gliederung}
+\frame{\frametitle{Gliederung}\tableofcontents[hideallsubsections]}
 
 %
 % Inhalt
 %
 
+\tucthreeheadlines{}
 \section{}
-\frame<beamer| trans>{\Huge\begin{center}\scalebox{2}{\texttt{\textbackslash endinput}}\end{center}}
+\frame<beamer| trans>{\begin{center}\scalebox{2}{Vielen Dank für eure Aufmerksamkeit.}\end{center}}
 
-\begin{onlyenv}<beamer| trans>
-\appendix
-\newcounter{finalframe}
-\setcounter{finalframe}{\value{framenumber}}
+% \begin{onlyenv}<beamer| trans>
+% \appendix
+% \newcounter{finalframe}
+% \setcounter{finalframe}{\value{framenumber}}
 
-%
-% "Spare-Slides" hier einsetzen.
-%
+% %
+% % "Spare-Slides" hier einsetzen.
+% %
 
-\setcounter{framenumber}{\value{finalframe}}
-\end{onlyenv}
+% \setcounter{framenumber}{\value{finalframe}}
+% \end{onlyenv}
+
+\tuctwoheadlines{}
+\section*{\ShortTitle}
+\subsection{Literatur}
+\input{content/bib}
+
 \end{document}
