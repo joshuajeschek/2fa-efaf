@@ -1,0 +1,27 @@
+name: Publish Latest
+
+on:
+  push:
+   branches:
+     - main
+
+jobs:
+  make:
+   runs-on: ubuntu-latest
+   steps:
+    - uses: actions/checkout@v2
+    - name: install dependencies
+      run: sudo apt-get install texlive-full
+    - name: make hauptseminar-beamer.pdf
+      run: |
+        make beamer
+        mv beamer.pdf hauptseminar-beamer.pdf
+    - name: upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Hauptseminar Präsentation.pdf
+        path: hauptseminar-beamer.pdf
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: hauptseminar-beamer.pdf
+        tag: latest
