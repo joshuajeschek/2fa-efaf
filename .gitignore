@@ -1,0 +1,11 @@
+/beamer.pdf
+/dualmon.pdf
+/handout.pdf
+/notes.pdf
+/article.pdf
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc

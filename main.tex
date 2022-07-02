@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Anwendungsbeispiel für das Beamer-Template TU Chemnitz                      %
+% (c) Mario Haustein (mario.haustein@hrz.tu-chemnitz.de), 2013-2019           %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+
+
+% TUC-Templates laden.
+\usetheme{tuc2019}
+\mode<article>{\usepackage{beamerarticletuc2019}}
+
+
+%
+% Weitere Anpassungen nach Bedarf.
+%
+
+%% Navigationsleiste deaktivieren.
+%\setbeamertemplate{navigation symbols}{}
+
+%% Mathematische Sätze nummerieren.
+%\setbeamertemplate{theorems}[numbered]
+
+%% Titelzeile fett und in Standardfarbe formatieren.
+%\setbeamercolor{frametitle}{parent=normal text}
+%\setbeamerfont{frametitle}{series=\bfseries}
+
+
+
+% Metadaten
+\title[Kurztitel]{Titel}
+\subtitle{Lehrveranstaltung bzw. Untertitel}
+\author{Autor}
+\date{Datum bzw. Semester}
+\institute[TUC]{TU Chemnitz}
+\titlegraphic{\includegraphics[height=0.2\textheight]{tuc2019/logo/tuc_green}}
+\tucurl{http://www.tu-chemnitz.de/urz/}
+
+
+
+\begin{document}
+\tucthreeheadlines
+\frame{\titlepage}
+\note{Anmerkungen}
+
+\tuctwoheadlines
+\frame{\frametitle{Gliederung}\tableofcontents}
+\note{\begin{itemize}
+\item Weitere Anmerkungen \dots
+\item \dots\ in Stichpunkten \dots
+\item \dots\ formuliert.
+\end{itemize}}
+
+%
+% Inhalt
+%
+
+\section{}
+\frame<beamer| trans>{\Huge\begin{center}\scalebox{2}{\texttt{\textbackslash endinput}}\end{center}}
+
+\begin{onlyenv}<beamer| trans>
+\appendix
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+
+%
+% "Spare-Slides" hier einsetzen.
+%
+
+\setcounter{framenumber}{\value{finalframe}}
+\end{onlyenv}
+\end{document}
