@@ -1,8 +1,8 @@
 TMPFILES	= *.{log,aux,toc,out,lof,lot,snm,nav,vrb,pdf,bak}
-LATEX		= pdflatex
+LATEX		= pdflatex -interaction=nonstopmode
 SHELL		= /bin/bash # fix for not running clean
 
-default:	beamer open
+default:	beamer
 
 all:		beamer handout notes dualmon
 
@@ -12,8 +12,10 @@ notes:		notes.pdf
 dualmon:	dualmon.pdf
 article:	article.pdf
 
+watch: default
+	while inotifywait -e close_write *.tex content/* images/*; do make; done
 
-%.pdf: %.tex main.tex $(wildcard inhalt/*) $(wildcard bilder/*)
+%.pdf: %.tex main.tex $(wildcard content/*) $(wildcard images/*)
 	$(LATEX) $<
 	$(LATEX) $<
 	$(LATEX) $<
