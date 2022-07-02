@@ -23,5 +23,3 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         artifacts: hauptseminar-beamer.pdf
-        allowUpdates: true
-        tag: latest
