@@ -10,6 +10,8 @@ jobs:
    runs-on: ubuntu-latest
    steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - uses: xu-cheng/texlive-action/full@v1
       with:
         run: |
@@ -20,6 +22,11 @@ jobs:
       with:
         name: Hauptseminar Präsentation.pdf
         path: hauptseminar-beamer.pdf
+    - name: delete latest tag
+      run: |
+        git tag -d latest
+        git push origin :latest
     - uses: ncipollo/release-action@v1
       with:
+        tag: latest
         artifacts: hauptseminar-beamer.pdf
