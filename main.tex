@@ -20,14 +20,14 @@
 %
 
 %% Navigationsleiste deaktivieren.
-%\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{navigation symbols}{}
 
 %% Mathematische Sätze nummerieren.
 %\setbeamertemplate{theorems}[numbered]
 
 %% Titelzeile fett und in Standardfarbe formatieren.
-%\setbeamercolor{frametitle}{parent=normal text}
-%\setbeamerfont{frametitle}{series=\bfseries}
+% \setbeamercolor{frametitle}{parent=normal text}
+% \setbeamerfont{frametitle}{series=\bfseries}
 
 % Metadaten
 \newcommand{\Title}{Benutzerfreundlichkeit fünf verschiedener Zwei-Faktor-Authentifizierungsmethoden}
@@ -47,12 +47,18 @@
 
 \tuctwoheadlines{}
 \section*{\ShortTitle}
+\subsection{Einleitung}
+\input{content/intro}
+
 \subsection{Gliederung}
 \frame{\frametitle{Gliederung}\tableofcontents[hideallsubsections]}
 
 %
 % Inhalt
 %
+
+\section{Fünf Zwei-Faktor-Authentifizierungsmethoden}
+\input{content/2fa}
 
 \tucthreeheadlines{}
 \section{}
@@ -73,6 +79,11 @@
 \tuctwoheadlines{}
 \section*{\ShortTitle}
 \subsection{Literatur}
-\input{content/bib}
+% \input{content/bib}
+\begin{frame}
+\frametitle{Literatur}
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{frame}
 
 \end{document}
