@@ -22,11 +22,11 @@ jobs:
       with:
         name: Hauptseminar Präsentation.pdf
         path: hauptseminar-beamer.pdf
-    - name: delete latest tag
-      run: |
-        git tag -d latest
-        git push origin :latest
+    - uses: benjlevesque/short-sha@v1.2
+      id: short-sha
+      with:
+        length: 7
     - uses: ncipollo/release-action@v1
       with:
-        tag: latest
+        tag: ${{ steps.short-sha.outputs.sha }}
         artifacts: hauptseminar-beamer.pdf
