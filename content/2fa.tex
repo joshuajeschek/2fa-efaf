@@ -2,12 +2,60 @@
 
 \subsection{SMS}
 \begin{frame}
+    \frametitle{SMS}
+    \begin{enumerate}
+        \item Bestätigungscode wird als SMS-Nachricht gesendet
+        \item Eingabe des Codes in App
+    \end{enumerate}
     \begin{itemize}
         \item am weitesten verbreitet\cite{reese2019}
+        \item einige Usability- und Sicherheitsprobleme, aber einfaches Setup
     \end{itemize}
+    \note{
+        Usability-Probleme:\cite{reese2019}
+        \begin{itemize}
+            \item verzögerte Zustellung
+            \item kein Empfang
+            \item Fehler bei Eingabe des Codes
+        \end{itemize}
+        Sicherheits-Probleme:\cite{reese2019}
+        \begin{itemize}
+            \item keine Verschlüsselung -> Man In The Middle
+            \item SIM-Swapping
+            \item Server muss Code sicher speichern
+            \item Brute-Force Angriffe sind nicht ausgeschlossen
+        \end{itemize}
+    }
 \end{frame}
 
 \subsection{TOTP}
+\begin{frame}
+    \frametitle{TOTP}
+    \begin{enumerate}
+        \item Nutzer scannt QR-Code, Scanner generiert Bestätigungscode
+        \item Bestätigungscode wird eingegeben und vom Server überprüft
+    \end{enumerate}
+    \begin{itemize}
+        \item Code hat beschränkte Lebensdauer
+        \item Spezieller Scanner oder Smartphone benötigt
+    \end{itemize}
+    \note{
+        \begin{itemize}
+            \item benötigt kein Internet oder Netz
+        \end{itemize}
+        Usability:\cite{reese2019}
+        \begin{itemize}
+            \item relative kompliziertes Setup
+            \item nicht alle haben Smartphone
+            \item Fehler bei Eingabe des Codes
+        \end{itemize}
+        Sicherheit:\cite{reese2019}
+        \begin{itemize}
+            \item Verschlüsselung \textrightarrow{} besser als SMS
+            \item Server und Client müssen Code sicher speichern
+        \end{itemize}
+    }
+\end{frame}
 
 \subsection{Vor-generierte Codes}
 

@@ -1,8 +1,4 @@
-/beamer.pdf
-/dualmon.pdf
-/handout.pdf
-/notes.pdf
-/article.pdf
+/*.pdf
 *.aux
 *.log
 *.nav
