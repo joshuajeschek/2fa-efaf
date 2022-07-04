@@ -3,9 +3,9 @@
 \usepackage[ngerman]{babel}
 \usepackage{tikz} % venn diagram
 \usepackage{endnotes} % image sources
-
-% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
-\usepackage[nobiblatex]{xurl}
+\usepackage[nobiblatex]{xurl} % url line breaks
+\usepackage{pgfplotstable} % csv to table
+\usepackage{ tipa } % right up arrow
 
 % currentname
 \usepackage{nameref}
@@ -13,8 +13,8 @@
 \newcommand*{\currentsectionname}{\@currentlabelname}
 \makeatother
 
-% TUC-Templates laden.
-\usetheme{tuc2019}
+% load TUC templates, set color scheme to IF
+\usetheme[fakcolor=if]{tuc2019}
 \mode<article>{\usepackage{beamerarticletuc2019}}
 
 
@@ -43,22 +43,19 @@
 \frame{\titlepage}
 
 \tuctwoheadlines{}
-\section*{\ShortTitle}
-\subsection{Einleitung}
 \input{content/intro}
 
-\subsection{Gliederung}
-\frame{\frametitle{Gliederung}\tableofcontents[hideallsubsections]}
+\subsection*{Gliederung}
+\frame{\frametitle{\currentsectionname}\tableofcontents}
 
 %
 % CONTENT
 %
 
-\section{Fünf Zwei-Faktor-Authentifizierungsmethoden}
 \input{content/2fa}
+\input{content/usability}
 
 \tucthreeheadlines{}
-\section{}
 \frame<beamer| trans>{\begin{center}\scalebox{2}{Vielen Dank für eure Aufmerksamkeit.}\end{center}}
 
 % \begin{onlyenv}<beamer| trans>
@@ -75,13 +72,13 @@
 
 \tuctwoheadlines{}
 \section*{\ShortTitle}
-\subsection{Literatur}
+\subsection*{Literatur}
 \begin{frame}
     \frametitle{\currentsectionname}
     \bibliography{refs}
 \end{frame}
 
-\subsection{Bildquellen}
+\subsection*{Bildquellen}
 \begin{frame}
     \frametitle{\currentsectionname}
     \theendnotes{}

@@ -14,23 +14,3 @@ macro:->\url
 macro:->\url
 {https://media.yubico.com/media/catalog/product/5/n/5nfc_hero_2021.png}
 \@endanenote 
-\@doanenote {5}
-macro:->\cite
-{reese2019}
-\@endanenote 
-\@doanenote {6}
-macro:->\url
-{https://borderpolar.com/wp-content/uploads/2021/06/red-among-us-png-842x1024.png.webp}
-\@endanenote 
-\@doanenote {7}
-macro:->\cite
-{reese2019}
-\@endanenote 
-\@doanenote {8}
-macro:->\cite
-{reese2019}
-\@endanenote 
-\@doanenote {9}
-macro:->\cite
-{reese2019}
-\@endanenote 

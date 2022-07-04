@@ -1,13 +1,11 @@
-\frame{\tableofcontents[sectionstyle=show/hide,subsectionstyle=show/show/hide]}
+\section{Fünf Zwei-Faktor-Authentifizierungsmethoden}
 
 \subsection{SMS}
 \begin{frame}
     \frametitle{\currentsectionname}
-    \begin{enumerate}
+    \begin{itemize}
         \item Bestätigungscode wird als SMS-Nachricht gesendet
         \item Eingabe des Codes in App
-    \end{enumerate}
-    \begin{itemize}
         \item am weitesten verbreitet
         \item einige Usability- und Sicherheitsprobleme, aber einfaches Setup
     \end{itemize}
@@ -32,11 +30,10 @@
 \subsection{TOTP}
 \begin{frame}
     \frametitle{\currentsectionname}
-    \begin{enumerate}
+    \begin{itemize}
+        \item \textit{Time-based One-time Password}
         \item Nutzer scannt QR-Code, Scanner generiert Bestätigungscode
         \item Bestätigungscode wird eingegeben und vom Server überprüft
-    \end{enumerate}
-    \begin{itemize}
         \item Code hat beschränkte Lebensdauer
         \item Spezieller Scanner oder Smartphone benötigt
     \end{itemize}
@@ -74,6 +71,7 @@
             \item Server und Nutzer müssen Codes sicher aufbewahren
             \item Keine Kontrolle über Sicherheit der Aufbewahrung auf Nutzerseite
             \item Codes sehr lange / immer gültig \textrightarrow{} empfänglich für Brute Force
+            \item wie bei SB-Service
         \end{itemize}
     }
 \end{frame}
@@ -127,7 +125,7 @@
             \begin{itemize}
                 \item[\textrightarrow] deshalb besonders interessant, wie Nutzer dies empfinden
             \end{itemize}
-            \item Sicherheitsrisiko: Verlieren des USB Sticks
+            \item Sicherheitsrisiko: Verlieren des Tokens
             \begin{itemize}
                 \item[\textrightarrow] besteht allerdings auch bei anderen Methoden
             \end{itemize}
