@@ -22,11 +22,10 @@ jobs:
       with:
         name: Hauptseminar Präsentation.pdf
         path: hauptseminar-beamer.pdf
-    - uses: benjlevesque/short-sha@v1.2
-      id: short-sha
-      with:
-        length: 7
+    - name: get seconds since epoch
+      run: echo "::set-output name=stamp::$(date +%s)"
+      id: time
     - uses: ncipollo/release-action@v1
       with:
-        tag: ${{ steps.short-sha.outputs.sha }}
+        tag: ${{ steps.time.outputs.stamp }}
         artifacts: hauptseminar-beamer.pdf
