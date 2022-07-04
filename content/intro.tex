@@ -1,5 +1,34 @@
 \begin{frame}
     \begin{center}
-        Einleitung \ldots
+        % Einleitung \ldots
+        %% This block is what you'll need to put in your code where you want your picture.
+        \begin{tikzpicture}
+            %% You can adjust the opacity here. For venn diagrams it is convenient to have a low opacity so that you can see intersections
+            \begin{scope} [fill opacity = .4]
+                %% The draw command knows a lot of shapes. To make a rectangle you just need to specify two diagonal corners. Make sure you always have a semicolon at the end of your draw commands, otherwise latex flips out.
+                % \draw (-5,5) rectangle (5,-6);
+                %% Similarly, you can make a circle by specifying the center and then the radius. You can also add a fill color, but if you're printing in black and white you'll probably want to remove that line.
+                \node[circle,
+                    draw,
+                    fill = gray,
+                    rotate = 60,
+                    minimum width = 4cm,
+                    anchor = 270] (e) at (0,1) {\includegraphics[width=0.2\textwidth,angle=-60]{images/password}};
+                \node[circle,
+                    draw,
+                    fill = gray,
+                    rotate = -60,
+                    minimum width = 4cm,
+                    anchor = 270] (e) at (0,1) {\includegraphics[height=0.2\textwidth,angle=60]{images/phone}};
+                \node[circle,
+                    draw,
+                    fill = gray,
+                    rotate = 0,
+                    minimum width = 4cm,
+                    anchor = 90] (e) at (0,1) {\includegraphics[height=0.2\textwidth]{images/touch-id}};
+            \end{scope}
+            %% And now you have a venn diagram. Yay!
+            % \draw[help lines](-5,5) grid (5,-6);    This line can draw the grid lines to help guide you. I use these when I'm writing the code and then delete this line when I publish the pdf.
+        \end{tikzpicture}
     \end{center}
 \end{frame}
