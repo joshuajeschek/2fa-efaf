@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{tikz} % venn diagram
-\usepackage{endnotes} % image sources
+\usepackage{enotez} % image sources (instead of endnotes for linking)
 \usepackage[nobiblatex]{xurl} % url line breaks
 \usepackage{pgfplotstable} % csv to table
 \usepackage{ tipa } % right up arrow
@@ -81,7 +81,8 @@
 \subsection*{Bildquellen}
 \begin{frame}
     \frametitle{\currentsectionname}
-    \theendnotes{}
+    % \theendnotes{}
+    \printendnotes{}
 \end{frame}
 
 \end{document}
