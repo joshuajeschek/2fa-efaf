@@ -1,7 +1,17 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage{tikz}
+\usepackage{tikz} % venn diagram
+\usepackage{endnotes} % image sources
+
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage[nobiblatex]{xurl}
+
+% currentname
+\usepackage{nameref}
+\makeatletter
+\newcommand*{\currentsectionname}{\@currentlabelname}
+\makeatother
 
 % TUC-Templates laden.
 \usetheme{tuc2019}
@@ -9,7 +19,9 @@
 
 
 % customization
+\graphicspath{ {./images/} }
 \bibliographystyle{alpha}
+\nocite{*}
 
 % deactivate navigation
 \setbeamertemplate{navigation symbols}{}
@@ -64,10 +76,15 @@
 \tuctwoheadlines{}
 \section*{\ShortTitle}
 \subsection{Literatur}
-% \input{content/bib}
 \begin{frame}
-\frametitle{Literatur}
-\bibliography{refs}
+    \frametitle{\currentsectionname}
+    \bibliography{refs}
+\end{frame}
+
+\subsection{Bildquellen}
+\begin{frame}
+    \frametitle{\currentsectionname}
+    \theendnotes{}
 \end{frame}
 
 \end{document}
