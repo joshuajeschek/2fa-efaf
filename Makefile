@@ -1,4 +1,4 @@
-TMPFILES	= *.{log,aux,toc,out,lof,lot,snm,nav,vrb,pdf,bak,bbl,blg,ent}
+TMPFILES	= *.{log,aux,toc,out,lof,lot,snm,nav,vrb,bak,bbl,blg,ent}
 LATEX		= pdflatex -interaction=nonstopmode
 BIB			= bibtex
 SHELL		= /bin/bash # fix for not running clean
@@ -24,6 +24,11 @@ article:	article.pdf
 	$(LATEX) $<
 
 clean:
+	rm -f $(TMPFILES)
+	rm -f *.pdf
+
+%-pdf:
+	make $*
 	rm -f $(TMPFILES)
 
 open:
