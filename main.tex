@@ -5,7 +5,6 @@
 \usepackage{enotez} % image sources (instead of endnotes for linking)
 \usepackage[nobiblatex]{xurl} % url line breaks
 \usepackage{pgfplotstable} % csv to table
-\usepackage{ tipa } % right up arrow
 
 % currentname
 \usepackage{nameref}
@@ -32,7 +31,7 @@
 \title[\ShortTitle]{\Title}
 \subtitle{Hauptseminar Medieninformatik}
 \author{Joshua Jeschek}
-\date{11.07.2022}
+\date{05. Juli 2022}
 \institute[TUC]{TU Chemnitz}
 \titlegraphic{\includegraphics[height=0.19\textheight]{tuc2019/logo/tuc_green}}
 \tucurl{https://hauptseminar.jeschek.eu}
@@ -40,13 +39,24 @@
 
 \begin{document}
 \tucthreeheadlines{}
-\frame{\titlepage}
+\begin{frame}
+    \titlepage{}
+
+    \note{Begrüßung}
+
+\end{frame}
 
 \tuctwoheadlines{}
 \input{content/intro}
 
 \subsection*{Gliederung}
-\frame{\frametitle{\currentsectionname}\tableofcontents}
+\begin{frame}
+    \frametitle{\currentsectionname}
+    \tableofcontents
+
+    \note{Gliederung vorstellen}
+
+\end{frame}
 
 %
 % CONTENT
@@ -54,21 +64,14 @@
 
 \input{content/2fa}
 \input{content/usability}
+\input{content/results}
 
 \tucthreeheadlines{}
-\frame<beamer| trans>{\begin{center}\scalebox{2}{Vielen Dank für eure Aufmerksamkeit.}\end{center}}
-
-% \begin{onlyenv}<beamer| trans>
-% \appendix
-% \newcounter{finalframe}
-% \setcounter{finalframe}{\value{framenumber}}
-
-% %
-% % "Spare-Slides" hier einsetzen.
-% %
-
-% \setcounter{framenumber}{\value{finalframe}}
-% \end{onlyenv}
+\begin{frame}
+    \begin{center}
+        \scalebox{2}{Vielen Dank für eure Aufmerksamkeit.}
+    \end{center}
+\end{frame}
 
 \tuctwoheadlines{}
 \section*{\ShortTitle}
@@ -81,7 +84,6 @@
 \subsection*{Bildquellen}
 \begin{frame}
     \frametitle{\currentsectionname}
-    % \theendnotes{}
     \printendnotes{}
 \end{frame}
 
