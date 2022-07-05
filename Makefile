@@ -1,4 +1,4 @@
-TMPFILES	= *.{log,aux,toc,out,lof,lot,snm,nav,vrb,pdf,bak,bbl,blg}
+TMPFILES	= *.{log,aux,toc,out,lof,lot,snm,nav,vrb,pdf,bak,bbl,blg,ent}
 LATEX		= pdflatex -interaction=nonstopmode
 BIB			= bibtex
 SHELL		= /bin/bash # fix for not running clean
