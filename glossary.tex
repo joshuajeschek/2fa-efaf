@@ -1,0 +1,102 @@
+% Glossary
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{a4wide}
+\usepackage{beamerarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{tikz} % venn diagram
+\usepackage{enotez} % image sources (instead of endnotes for linking)
+\usepackage[nobiblatex]{xurl} % url line breaks
+\usepackage{pgfplotstable} % csv to table
+
+% load TUC templates, set color scheme to IF
+\usetheme[fakcolor=if]{tuc2019}
+\mode<article>{\usepackage{beamerarticletuc2019}}
+
+
+% customization
+\graphicspath{ {./images/} }
+\bibliographystyle{alpha}
+\nocite{*}
+
+% deactivate navigation
+\setbeamertemplate{navigation symbols}{}
+\setlength{\tabcolsep}{0.01\linewidth}
+
+% metadata
+\newcommand{\Title}{Usability of Five Two-Factor Authentication Methods}
+\newcommand{\ShortTitle}{Two-Factor Authentication Methods}
+\newcommand{\GlossaryEntry}[4]{#1 & #2 & #3 & #4 \\\hline}
+\title[\ShortTitle]{\Title}
+\subtitle{EfaF 271-271A - Kurs 3}
+\author{Joshua Jeschek}
+\date{December 8, 2022}
+\institute[TUC]{TU Chemnitz}
+\titlegraphic{\includegraphics[height=0.19\textheight]{tuc2019/logo/tuc_green}}
+\tucurl{https://www.tu-chemnitz.de}
+
+
+\begin{document}
+\section*{\Title}
+\subsection*{Glossary}
+\begin{tabular}{ |p{0.2\linewidth}|p{0.1\linewidth}|p{0.4\linewidth}|p{0.3\linewidth}| }
+\hline
+\textbf{New Entry} & \textbf{Word Class} & \textbf{Paraphrase} & \textbf{Sample Sentence}\\
+\hline
+\GlossaryEntry
+  {\textbf{2FA} (Two-Factor Authentication)}
+  {noun}
+  {a security process in which the user provides two different authentication factors to verify their identity}
+  {I use 2FA to keep my online accounts safe.}
+\GlossaryEntry
+  {\textbf{Pre-generated codes}}
+  {noun}
+  {list of one-time codes that are generated in advance and do not require an external device}
+  {Keep your list of pre-generated codes safe.}
+\GlossaryEntry
+  {\textbf{Push Notifications}}
+  {noun}
+  {a feature of mobile devices that allows an app to send a message to the user}
+  {I sometimes miss important emails alongside all these push notifications.}
+\GlossaryEntry
+  {\textbf{QR code} (Quick Response code)}
+  {noun}
+  {two-dimensional barcode used to store data}
+  {QR codes can store information such as URLs}
+\GlossaryEntry
+  {\textbf{SEQ} (Single Ease Question)}
+  {noun}
+  {single question which asks users to rate the overall usability on a scale from 1 to 7}
+  {The Single Ease Question is a heavily simplified version of the System Usability Scale}
+\GlossaryEntry
+  {\textbf{SUS} (System Usability Scale)}
+  {noun}
+  {standardized questionnaire that is used to measure the usability of a system or product.}
+  {The System Usability Scale consists of 10 questions, each of which can be answered on a scale from 1 to 5.}
+\GlossaryEntry
+  {\textbf{TOTP} (Time-based One-Time Password)}
+  {noun}
+  {type of two-factor authentication that uses a combination of a password and a generated code that is valid for a limited time}
+  {My time-based one-time password is almost expired, I have to hurry or get a new one.}
+\GlossaryEntry
+  {\textbf{U2F} (Universal 2nd Factor)}
+  {noun}
+  {a type of two-factor authentication that uses a hardware security token}
+  {Many online services allow setting up U2F as a Two-Factor Authentication method.}
+\GlossaryEntry
+  {\textbf{U2F security token}}
+  {noun}
+  {a small physical device that the user inserts into a computer's USB port when using U2F}
+  {I keep my U2F token on my keychain. This is where my analog and digital keys meet!}
+\GlossaryEntry
+  {\textbf{Usability}}
+  {noun}
+  {ease of use and overall effectiveness of a product or system from the perspective of the user}
+  {Usability is a very important factor that should be considered when designing software.}
+\end{tabular}
+\newpage
+\bibliography{refs}
+\end{document}

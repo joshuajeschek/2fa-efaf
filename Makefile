@@ -12,6 +12,7 @@ handout:	handout.pdf
 notes:		notes.pdf
 dualmon:	dualmon.pdf
 article:	article.pdf
+glossary:	glossary.pdf
 
 %-watch:
 	make $*
