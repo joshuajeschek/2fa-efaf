@@ -30,6 +30,7 @@
               \item every participant sets up every method
               \item can compare it
               \item tested seperately \textrightarrow maybe only setup needs to be improved or vice versa
+              \item will not touch on the usability of the setup process today, since it would go beyond the scope of this presentation
             \end{itemize}
     \end{itemize}
   }
@@ -50,15 +51,14 @@
 
   \note{
     \begin{itemize}
-      \item Erste betrachtete Metrik: Authentifizierungszeit
-      \item Zeit, für Passwort benötigt nicht mit eingerechnet
-      \item U2F am schnellsten, wahrscheinlich weil Nutzer YubiKey am Gerät stecken haben
-      \item am zweitschnellsten Push-Benachrichtigungen
-      \item Andere 3 Methoden: Zeit zum Eintippen der Zahlen benötigt, verlangsamt Prozess
-      \item SMS: Zeit zum Versenden kommt dazu % chktex 13
-      \item Codes müssen rausgesucht werden, nicht unbedingt immer zur Hand
+      \item Time to enter password is not included in measured time
+      \item U2F was the fastest, probably since users kept the token plugged in
+      \item push notifications scored second place \textrightarrow{} prepared for authentication, phone in vincinity, good internet connection at home
+      \item other three methods all require user input of confirmation code \textrightarrow{} time difference might be due to that
+      \item SMS: additionaly time to send
+      \item pregenerated codes might
       \item \begin{itemize}
-              \item[\textrightarrow] wahrscheinlich große Varianz aufgrund von verschiedenen Aufbewahrungsmöglichkeiten
+              \item[\textrightarrow] variance quite big since different users probably store the codes differently
             \end{itemize}
     \end{itemize}
   }
@@ -78,78 +78,18 @@
 
   \note{
     \begin{itemize}
-      \item Passwort als Kontrollwert
-      \item andere Werte alle schlechter, fügen ja nur weitere Schritte hinzu
-      \item obwohl TOTP am drittlangsamsten, höchster Score unter 2FA-Methoden
+      \item password as control value, as you can see other values are all worse, since they only complicate the authentication
+      \item while TOTP was the third slowest method, it scored best on the SUS scale
             \begin{itemize}
-              \item Google App wurde benutzt, Implementierung wahrscheinlich nutzerfreundlich
-              \item Manche Personen haben sich beschwert, dass die Codes zu schnell ablaufen zum Eingeben
-              \item Erklärt auch längere Zeit aus vorheriger Folie
+              \item the app that was used is probably designed very user friendly
+              \item some users complained that codes would expire to quick
+              \item explains longer authentication time in last slide
             \end{itemize}
-      \item Auch interessant: U2F hatte sehr große Varianz, schnitt am schlechtesten ab, obwohl zeitlich am schnellsten
+      \item quite interesting to see: U2F was fastest, but has the worst usability score
             \begin{itemize}
-              \item Zeit nicht alles, muss auch komfortabel sein
-              \item große Unterschiede durch verschiedene Möglichkeiten YubiKey aufzubewahren
-              \item[\textrightarrow] nicht alle wollen extra Gerät, ist kein Handy was man so oder so hat
-            \end{itemize}
-    \end{itemize}
-  }
-
-\end{frame}
-
-\subsection{Setup of 2FA}
-\begin{frame}
-  \frametitle{Time to Setup}
-
-  \begin{itemize}
-    \item Time between start of setup and completion
-  \end{itemize}
-  \begin{figure}[c]
-    \includegraphics[height=0.8\textheight]{setup-time}\cite{reese2019}
-  \end{figure}
-
-  \note{
-    \begin{itemize}
-      \item Einrichtungszeit für Codes am geringsten,
-            da Zeit zum Abspeichern / Ausdrucken / wie auch immer aufbewahren nicht mit betrachtet wurde
-            \begin{itemize}
-              \item[\textrightarrow] Zeiten wären zu unterschiedlich voneinander gewesen, da schon von Drucker abhängt
-            \end{itemize}
-      \item Push und SMS am zweitschnellsten, Angabe von Telefonnummer und Verbindung mit Push-App schnell
-      \item TOTP und U2F hatten zwei fehlgeschlagene Einrichtungen und waren am langsamsten
-      \item Langsame Einrichtung von U2F trotzdem noch bei ca.\ einer Minute
-            \begin{itemize}
-              \item[\textrightarrow] durch schnelle tagtägliche Benutzung vielleicht zu Entschuldigen
-              \item Allerdings muss Nutzer bereits U2F Gerät wie YubiKey besitzen
-            \end{itemize}
-    \end{itemize}
-  }
-
-\end{frame}
-
-\begin{frame}
-  \frametitle{Setup Usability}
-
-  \begin{itemize}
-    \item Single Ease Question (SEQ), scale from 1 (very difficult) to 7 (very easy)
-  \end{itemize}
-  \begin{figure}[c]
-    \includegraphics[height=0.7\textheight]{setup-seq}~\cite{reese2019}
-  \end{figure}
-
-  \note{
-    \begin{itemize}
-      \item Nutzer bewerten Usability über Single Ease Question
-            \begin{itemize}
-              \item Eine Frage: ``Wie Einfach war es, die Einrichtung abzuschließen?''
-              \item Bewertung auf Skala von 1 bis 7, von sehr schwer bis sehr einfach
-              \item Wahl von SEQ, um Ermüdung vorzubeugen, da alle Teilnehmer*innen alle Methoden eingerichtet haben
-            \end{itemize}
-      \item mit zeitlicher Erfassung übereinstimmend Push und SMS am einfachsten eingestuft
-      \item Vermutung:
-            \begin{itemize}
-              \item Bekannheit von SMS verbessert Ergebnis von SMS
-              \item die meisten kennen U2F und TOTP nicht, weshalb die Scores schlechter sein könnten
+              \item time does not seem to be the single most important factor for users
+              \item differences in score, since different users might also store the security token differently
+              \item[\textrightarrow] not everyone wants to have to carry another device which isn't their phone
             \end{itemize}
     \end{itemize}
   }

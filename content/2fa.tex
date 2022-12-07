@@ -10,18 +10,16 @@
     \item Some usability and security issues, but simple setup
   \end{itemize}
   \note{
-    Usability-Probleme:
+    Usability Problems:
     \begin{itemize}
-      \item verzögerte Zustellung
-      \item kein Empfang
-      \item Fehler bei Eingabe des Codes
+      \item delayed or no delivery
+      \item user error when entering code
     \end{itemize}
-    Sicherheits-Probleme:
+    Security Problems:
     \begin{itemize}
-      \item keine Verschlüsselung -> Man In The Middle
-      \item SIM-Swapping
-      \item Server muss Code sicher speichern
-      \item Brute-Force Angriffe sind nicht ausgeschlossen
+      \item no encryption \textrightarrow{} Man In The Middle Attack
+      \item SIM-Swapping \textrightarrow{} way to steal phone number, so codes are sent to wrong user
+      \item Brute-Force attacks are possible, since codes are quite short
     \end{itemize}
   }
 \end{frame}
@@ -39,18 +37,16 @@
 
   \note{
     \begin{itemize}
-      \item benötigt kein Internet oder Netz \textrightarrow{} weniger Angriffsfläche
+      \item requires no internet access or phone reception\textrightarrow{} less attack surface
     \end{itemize}
-    Usability:
+    Usability Problems:
     \begin{itemize}
-      \item relative kompliziertes Setup
-      \item nicht alle haben Smartphone
-      \item Fehler bei Eingabe des Codes
+      \item relatively complicated to setup
+      \item user error when entering code
     \end{itemize}
-    Sicherheit:
+    Security:
     \begin{itemize}
-      \item Verschlüsselung \textrightarrow{} besser als SMS
-      \item Server und Client müssen Code sicher speichern
+      \item Encrypted \textrightarrow{} better than SMS
     \end{itemize}
   }
 \end{frame}
@@ -66,11 +62,9 @@
 
   \note{
     \begin{itemize}
-      \item Länge der Codes lädt zu Fehlern bei Aufbewahrung / Eingabe ein
-      \item Server und Nutzer müssen Codes sicher aufbewahren
-      \item Keine Kontrolle über Sicherheit der Aufbewahrung auf Nutzerseite
-      \item Codes sehr lange / immer gültig \textrightarrow{} empfänglich für Brute Force
-      \item wie bei SB-Service
+      \item relatively long codes may lead to errors when storing or entering them
+      \item Users need to store codes securely, can be stolen
+      \item codes valid for a long time \textrightarrow{} brute force possible
     \end{itemize}
   }
 \end{frame}
@@ -90,9 +84,8 @@
 
   \note{
     \begin{itemize}
-      \item Server muss Benachrichtigung an richtiges Gerät schicken
-      \item kein Code \textrightarrow{} weniger fehleranfällig
-      \item könnte als nutzerfreundlicher und schneller empfunden werden
+      \item notification needs to be sent to right device \rightarrow{} ideally the device nearest to the user
+      \item no need to enter code \textrightarrow{} less prone to error
     \end{itemize}
   }
 \end{frame}
@@ -119,13 +112,13 @@
 
   \note{
     \begin{itemize}
-      \item wurde als sehr sichere, und trotzdem nutzerfreundliche Methode konzipiert
+      \item conceived as a very secure, but still usable method
             \begin{itemize}
-              \item[\textrightarrow] deshalb besonders interessant, wie Nutzer dies empfinden
+              \item[\textrightarrow] that's why very interesting later, when we look at the study results
             \end{itemize}
-      \item Sicherheitsrisiko: Verlieren des Tokens
+      \item Security Risk: Loss of U2F token
             \begin{itemize}
-              \item[\textrightarrow] besteht allerdings auch bei anderen Methoden
+              \item[\textrightarrow] important to have a backup safely stored away
             \end{itemize}
     \end{itemize}
   }
