@@ -17,22 +17,18 @@ jobs:
         run: |
           make beamer
           make glossary
+          make notes || true
           mv beamer.pdf 2fa-efaf-beamer.pdf
           mv glossary.pdf 2fa-efaf-glossary.pdf
+          mv notes.pdf 2fa-efaf-notes.pdf
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: 2fa-efaf-beamer.pdf
-        path: 2fa-efaf-beamer.pdf
-    - name: upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: 2fa-efaf-glossary.pdf
-        path: 2fa-efaf-glossary.pdf
+        path: "*.pdf"
     - name: get seconds since epoch
       run: echo "::set-output name=stamp::$(date +%s)"
       id: time
     - uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.time.outputs.stamp }}
-        artifacts: "2fa-efaf-beamer.pdf,2fa-efaf-glossary.pdf"
+        artifacts: "2fa-efaf-beamer.pdf,2fa-efaf-glossary.pdf,2fa-efaf-notes.pdf"
