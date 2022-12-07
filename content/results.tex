@@ -1,65 +1,29 @@
-\section{Schlussfolgerungen und andere Studien}
+\section{Conclusion}
 
-\subsection*{Studienergebnisse}
+\subsection*{Study Results}
 \begin{frame}
-    \frametitle{\currentsectionname}
+  \frametitle{\currentsectionname}
 
+  \begin{itemize}
+    \item no clear winner \textrightarrow{} every method can be improved
+    \item U2F is the most secure, but not usable enough for broad adoption
+    \item different expectations (security vs. comfort)
+    \item depending on application and user preferences
+  \end{itemize}
+
+  \note{
     \begin{itemize}
-        \item keine klaren Gewinner \textrightarrow{} jede Methode kann verbessert werden
-        \item U2F ist zwar sicher, aber noch nicht gebrauchstauglich genug
-        \item verschiedene Anforderungen an Sicherheit und Komfort
-        \item abhängig von Anwendung und Nutzer
+      \item Vorgenerierte Codes relativ unsicher, langsam aber einfach in der Benutzung,
+            schwierig Einrichtung zu vergleichen (Drucker, Aufbewahrung etc)
+      \item Push-Benachrichtigungen sind schnell, und oft gut zu benutzen und einzurichten,
+            jedoch große Varianz in Usability der Authentifizierung
+      \item SMS weiterhin am weitesten verbreitet, trotz dass sie am unsichersten sind,
+            langsam und schwierig in Benutzung, jedoch nicht in der Einrichtung
+      \item TOTP schwierig und langwierig in Einrichtung,
+            während tagtägliche Gebrauchstauglichkeit trotz relativ großem Zeitaufwand als gut eingeschätzt wurde
+      \item U2F mit Ziel entwickelt, sicher und komfortabel zu sein,
+            erzielt jedoch nicht die erwarteten Ziele der Gebrauchstauglichkeit (trotz Geschwindigkeit!)
     \end{itemize}
-
-    \note{
-        \begin{itemize}
-            \item Vorgenerierte Codes relativ unsicher, langsam aber einfach in der Benutzung,
-                schwierig Einrichtung zu vergleichen (Drucker, Aufbewahrung etc)
-            \item Push-Benachrichtigungen sind schnell, und oft gut zu benutzen und einzurichten,
-                jedoch große Varianz in Usability der Authentifizierung
-            \item SMS weiterhin am weitesten verbreitet, trotz dass sie am unsichersten sind,
-                langsam und schwierig in Benutzung, jedoch nicht in der Einrichtung
-            \item TOTP schwierig und langwierig in Einrichtung,
-                während tagtägliche Gebrauchstauglichkeit trotz relativ großem Zeitaufwand als gut eingeschätzt wurde
-            \item U2F mit Ziel entwickelt, sicher und komfortabel zu sein,
-                erzielt jedoch nicht die erwarteten Ziele der Gebrauchstauglichkeit (trotz Geschwindigkeit!)
-        \end{itemize}
-    }
-
-\end{frame}
-
-\subsection*{weitere Studien}
-\begin{frame}
-    \frametitle{\currentsectionname}
-
-    \begin{itemize}
-        \item 2013: A Comparative Usability Study of Two-Factor Authentication\cite{de2013}
-        \item 2021: Driving 2FA adoption at scale: Optimizing Two-Factor authentication notiﬁcation design patterns.\cite{golla2021}
-    \end{itemize}
-    \newtheorem{fragen}{Fragestellungen}
-    \begin{fragen}
-        \begin{itemize}
-            \item Wieso adoptieren Nutzer 2FA (nicht)?
-            \item In welchen Bereichen wollen Nutzer mehr Sicherheit, wo mehr Komfort?
-            \item Wie kann die Benutzung von 2FA weiter verbreitet werden?
-            \item Wie können unsichere Methoden wie SMS, durch sichere Methoden ersetzt werden?
-        \end{itemize}
-    \end{fragen}
-
-    \note{
-        \begin{itemize}
-            \item Studie von 2013 relativ alt, denoch interessant zu Lesen, um zu verstehen,
-                    wie Nutzer denken und wie man eine Studie aufbauen könnte
-            \item Artikel von 2021 aktueller,
-                behandelt wie Nutzer dazu gebracht werden können, 2FA zu benutzen
-            \item Fragestellungen\ldots{}
-            \item Meinung: sowohl Aufklärung über Sicherheit als auch Usability
-                von sicheren Faktoren muss verbessert werden
-            \begin{itemize}
-                \item Dazu wichtig zu wissen,
-                    wie Nutzer denken und was aktuell noch Probleme sind
-            \end{itemize}
-        \end{itemize}
-    }
+  }
 
 \end{frame}
